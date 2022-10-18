@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   get "my_project/this_is_my_project" => "my_project#example_project"
   get "my_project" => "my_project#example_project"
   # ...
-  root :to => "welcome#my_project"
   root 'welcome#index'
   # ...
 end
