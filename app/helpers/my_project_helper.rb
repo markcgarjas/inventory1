@@ -1,0 +1,2 @@
+module MyProjectHelper
+end
