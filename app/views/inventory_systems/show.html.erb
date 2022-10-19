@@ -1,0 +1,5 @@
+<%= render partial: 'header', locals: { inventory_system: @inventory_system } %>
+<h1>| Product: <%= @inventory_system.product_name %> |</h1>
+<%= render "show", inventory_system: @inventory_system %>
+
+<%= render partial: 'footer', locals: { inventory_system: @inventory_system } %>

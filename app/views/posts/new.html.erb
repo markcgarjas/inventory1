@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body class="text-center pt-4 bg-dark">
+  <div class="container">
+    <div class="card">
+      <div class="card-body card rounded-5">
+    <h1 class="text-dark">New Post</h1>
+
+    <%= form_with model: @post do |form| %>
+      <div class="container">
+        <div class="py-2">
+          <label for=""><%= form.text_field :product_name, class: 'form-control-lg', placeholder: "Product Name" %></label>
+        </div>
+        <div class="py-2">
+          <label for=""><%= form.number_field :product_id, class: 'form-control-lg', maxlength: 5, placeholder: "Product ID", required: true%></label>
+        </div>
+        <div class="py-2">
+          <label><%= form.number_field :product_quantity, class:'form-control-lg',placeholder: "Product Quantity", required: true%></label>
+        </div>
+        <div class="py-2">
+          <label><%= form.text_field :product_description, class:'form-control-lg',placeholder:"Product Description", required:true%></label>
+        </div>
+        <div class="py-2">
+          <label><%= form.text_field :product_availability, class:'form-control-lg',placeholder:"Product Availability", required:true%></label>
+        </div>
+        <div class="py-2">
+        <%= form.submit class: 'btn btn-lg mt-1'%>
+        </div>
+        <div>
+          <p><%= link_to 'Back to Table Post',inventory_systems_path , class:'text-primary'%></p>
+        </div>
+      </div>
+      </div>
+      </div>
+    <% end %>
+
+</body>
+</html>

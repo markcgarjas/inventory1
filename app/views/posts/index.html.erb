@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body class="text-center pt-4 bg-dark">
+<div class="container py-2">
+  <h1 class="text-light text-center">Post List</h1>
+
+  <table class="table border border-4 text-light">
+    <thead class="border border-4 bg-light">
+    <tr class="border border-4 border-light">
+      <td class="border border-2 border-light">Product Name</td>
+      <td class="border border-2 border-light">Product ID</td>
+      <td class="border border-2 border-light">Product Quantity</td>
+      <td class="border border-2 border-light">Product Description</td>
+      <td class="border border-2 border-light">Product Availability</td>
+    </tr>
+    </thead>
+    <% @posts.each do |post| %>
+      <tr class="border border-4 border-light">
+        <td class="border border-2 border-light"><%= post.product_name %> </td>
+        <td class="border border-2 border-light"><%= post.product_id %></td>
+        <td class="border border-2 border-light"><%= post.product_quantity %></td>
+        <td class="border border-2 border-light"><%= post.product_description %></td>
+        <td class="border border-2 border-light"><%= post.product_availability %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <p><%= link_to '', new_post_path, class:'text-primary' %></p>
+
+</div>
+</body>
+</html>

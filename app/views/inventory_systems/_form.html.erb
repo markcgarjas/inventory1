@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body class="text-center pt-4 bg-dark" style="">
+  <div class="container pt-2" style="height: 700px">
+    <%= form_with model: @inventory_system do |form| %>
+      <div class="form-group row justify-content-center align-content-center pt-3">
+        <% form.label :product_name,for:'inputEmail3', class: 'col-lg-2 col-form-label'%>
+        <div class="col-lg-3">
+            <%= form.text_field :product_name, class: 'form-control',placeholder: 'Product Name'%>
+        </div>
+      </div>
+
+      <div class="form-group row justify-content-center align-content-center pt-3">
+        <% form.label :product_type, class: 'col-lg-2 col-form-label'%>
+        <div class="col-lg-3">
+          <%= form.text_field :product_type, class: 'form-control',placeholder: 'Product Type'%>
+        </div>
+      </div>
+
+      <div class="form-group row justify-content-center align-content-center pt-3">
+        <% form.label :product_quantity, class: 'col-lg-2 col-form-label'%>
+        <div class="col-lg-3">
+          <%= form.number_field :product_quantity, class: 'form-control',placeholder: 'Product Quantity'%>
+        </div>
+      </div>
+
+      <div class="form-group row justify-content-center align-content-center pt-3">
+        <% form.label :product_description, class: 'col-lg-2 col-form-label'%>
+        <div class="col-lg-3">
+          <%= form.text_area :product_description, class: 'form-control',placeholder: 'Product Description'%>
+        </div>
+      </div>
+
+      <%= form.submit value: 'Add Product',class: 'mt-3 btn btn-warning'%>
+      <% if @inventory_system.errors.any? %>
+        <ul>
+          <% @inventory_system.errors.each do |error| %>
+            <ol class><%= error.full_message %></ol>
+          <% end %>
+        </ul>
+      <% end %>
+      <% end %>
+    <p class="mt-4"><%= link_to 'Back to Dashboard', inventory_systems_path, class: 'nav-link'%></p>
+  </div>
+</body>
+</html>

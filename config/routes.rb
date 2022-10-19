@@ -1,20 +1,27 @@
 Rails.application.routes.draw do
+  resources :inventory_systems
+
+  # get "inventory_systems/home" => "inventory_systems#home"
+  get "inventory_systems/home" => "inventory_systems#home"
+  root 'inventory_systems#index'
+  # get "inventory_systems/next" => "inventory_systems#next"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
-  get "welcome/say_monday" => "welcome#monday"
-  get "welcome/tuesday" => "welcome#tueday"
-  get "welcome/wednesday" => "welcome#wednesday"
-  get "welcome/thursday" => "welcome#thursday"
-  get "welcome/friday" => "welcome#friday"
-  get "welcome/index" => "welcome#index"
+  # root "articles#home"
+  # get "welcome/say_monday" => "welcome#monday"
+  # get "welcome/tuesday" => "welcome#tueday"
+  # get "welcome/wednesday" => "welcome#wednesday"
+  # get "welcome/thursday" => "welcome#thursday"
+  # get "welcome/friday" => "welcome#friday"
+  # get "welcome/home" => "welcome#home"
 
-  get "welcome" => "welcome#index"
+  # get "posts/new" => "posts#new"
+  # get "posts/home" => "posts#home"
+  resources :posts
 
-  get "my_project/this_is_my_project" => "my_project#example_project"
-  get "my_project" => "my_project#example_project"
   # ...
-  root 'welcome#index'
+  # root 'welcome#home'
   # ...
 end

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body class="text-center pt-4 bg-dark">
+<div class="container py-2" style="height: 700px;">
+
+  <table class="table table-bordered border-secondary text-light">
+    <thead class="">
+    <tr class="">
+      <td class="">ID</td>
+      <td class="">Product Name</td>
+<!--      <td class="border border-2 border-light">Product Type</td>-->
+<!--      <td class="border border-2 border-light">Product Quantity</td>-->
+<!--      <td class="border border-2 border-light">Product Description</td>-->
+      <td class=""></td>
+      <td class=""></td>
+    </tr>
+    </thead>
+    <% @inventory_systems.each do |inventory_system| %>
+      <tr class="">
+        <td class=""><p class="text-lg-center"><%= inventory_system.id%></p> </td>
+        <td class=""><p class="text-lg-center"><%= inventory_system.product_name%></p> </td>
+<!--        <td class="border border-2 border-light"><p class="text-lg-center"><%#= inventory_system.product_type %></p></td>-->
+<!--        <td class="border border-2 border-light"><p class="text-lg-center"><%#= inventory_system.product_quantity %></p></td>-->
+<!--        <td class="border border-2 border-light"><p class="text-lg-center"><%#= inventory_system.product_description %></p></td>-->
+        <td><p class="text-lg-center"><%= link_to 'Show', inventory_system_path(inventory_system), class: 'text-light' %> | <%= link_to 'Edit', edit_inventory_system_path(inventory_system), class: 'text-light'%></p></td>
+        <td><%= button_to 'Delete', inventory_system_path(inventory_system), class: 'btn btn-sm', method: :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+
+</div>
+</body>
+</html>

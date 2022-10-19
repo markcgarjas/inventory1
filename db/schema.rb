@@ -10,5 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_19_034713) do
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "inventory_systems", force: :cascade do |t|
+    t.string "product_name"
+    t.string "product_type"
+    t.integer "product_quantity"
+    t.text "product_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "product_name"
+    t.integer "product_id"
+    t.integer "product_quantity"
+    t.text "product_description"
+    t.string "product_availability"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

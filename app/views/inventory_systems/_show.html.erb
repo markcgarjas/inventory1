@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body class="text-center pt-4 bg-dark" style="">
+<div class="container pt-2" style="height: 700px">
+  <p>Product Type: <%= @inventory_system.product_type %></p>
+  <p>Product Quantity: <%= @inventory_system.product_quantity %></p>
+  <p>Product Description: <%= @inventory_system.product_description %></p>
+
+  <p class="mt-4"><%= link_to 'Back to Dashboard', inventory_systems_path, class: 'nav-link'%></p>
+</div>
+
+</body>
+</html>
