@@ -4,3 +4,4 @@ class InventorySystem < ApplicationRecord
   validates :product_quantity, presence: true
   validates :product_description, presence: true
 end
+
